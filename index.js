@@ -28,9 +28,10 @@ hint - you should be looking at the stage key inside of the objects
 */
         
 function getFinals(d) {
-let newA = (d.filter((item) => item.Stage === "Final"))
-return newA
-}
+    let newA = d.filter((item) => item.Stage === "Final")
+    return newA
+    }
+console.log('task 2', getFinals(fifaData))
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
 1. Receive an array
