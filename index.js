@@ -38,9 +38,9 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(array, getFinalsCB) {
-    let year = getFinalsCB(array)
-    return (year.map(item => item.Year))
-    }
+let year = getFinalsCB(array)
+return (year.map(item => item.Year))
+}
     
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
@@ -52,10 +52,9 @@ Use the higher-order function getWinners to do the following:
 
 function getWinners(array, getFinalsCB) {
     let winners = getFinalsCB(array);
-    return  winners.map(i => (i['Home Team Goals'] > i['Away Team Goals']) ? (i['Home Team Name']) : (i['Away Team Name']));
+    return winners.map(i => (i['Home Team Goals'] > i['Away Team Goals']) ? (i['Home Team Name']) : (i['Away Team Name']));
     
 }
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
@@ -67,14 +66,15 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 function getWinnersByYear(array, yearsCB, winnersCB) {
-    let years = yearsCB(array,getFinals);
-    let winners = winnersCB(array,getFinals);
+    let years = yearsCB(array);
+    let winners = winnersCB(array);
     let winyears = [];
     for (let i = 0; i < winners.length; i++){
         winyears.push(`In ${years[i]}, ${winners[i]} won the world cup!`)
     }
     return winyears
   }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
