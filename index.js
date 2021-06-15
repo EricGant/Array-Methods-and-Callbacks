@@ -52,17 +52,12 @@ Use the higher-order function getWinners to do the following:
 4. Returns the names of all winning countries in an array called `winners` */ 
 
 
-function getWinners(cb) {
-    let winners = [];
-    let filteredA = getFinals(fifaData).filter(item => 
-      item['Home Team Goals'] > item['Away Team Goals']);
-    let filteredB = getFinals(fifaData).filter(item => 
-      item['Away Team Goals'] > item['Home Team Goals']);
-    filteredA.forEach(item => winners.push(item['Home Team Name']));
-    filteredB.forEach(item => winners.push(item['Away Team Name']))
-    return winners
+function getWinners(getFinalsCB) {
+    const winners = [];
+    getFinalsCB.filter(i => i['Home Team Goals'] > i['Away Team Goals'] ? 
+    winners.push(i['Home Team Name']) : winners.push(i['Away Team Name']));
+    return winners;
 }
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
