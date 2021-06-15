@@ -26,9 +26,9 @@ Use getFinals to do the following:
 
 hint - you should be looking at the stage key inside of the objects
 */
-
+        
 function getFinals(d) {
-let newA = (d.filter((stage) => stage.Stage === "Final"))
+let newA = (d.filter((item) => item.Stage === "Final"))
 return newA
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -58,6 +58,7 @@ function getWinners(getFinalsCB) {
     winners.push(i['Home Team Name']) : winners.push(i['Away Team Name']));
     return winners;
 }
+getWinners(getFinals(fifaData))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
@@ -75,7 +76,8 @@ function getWinnersByYear(gwCB, gyCB) {
     }
     return newA
   }
-  
+ console.log(getWinnersByYear(getWinners(getFinals(fifaData)), getYears()))
+ getWinnersByYear(getWinners(getFinals(fifaData)), getYears())
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
  1. Receive the callback function getFinals from task 2 ensure you pass in the data as an argument
